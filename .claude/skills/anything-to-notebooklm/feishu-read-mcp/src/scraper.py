@@ -122,7 +122,7 @@ class FeishuScraper:
             try:
                 await page.wait_for_function(
                     """() => {
-                        const loaders = document.querySelectorAll('.loading, .spinner, [class*=\"loading\"]');
+                        const loaders = document.querySelectorAll('.loading, .spinner, [class*="loading"]');
                         return loaders.length === 0;
                     }""",
                     timeout=10000
@@ -207,7 +207,7 @@ class FeishuScraper:
 
                     // 查找文档内容容器
                     const contentSelectors = [
-                        'div[contenteditable=\"true\"]',
+                        'div[contenteditable="true"]',
                         '.larkui-theme-default',
                         '.document',
                         '.feishu-docs-content',
@@ -356,7 +356,7 @@ class FeishuScraper:
                         'h1',
                         '.document-title',
                         '.title',
-                        '[data-testid=\"title\"]'
+                        '[data-testid="title"]'
                     ];
 
                     for (const selector of titleSelectors) {
@@ -383,7 +383,7 @@ class FeishuScraper:
                     const authorSelectors = [
                         '.author',
                         '.creator',
-                        '[data-testid=\"author\"]',
+                        '[data-testid="author"]',
                         '.user-avatar'
                     ];
 
